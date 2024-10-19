@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>About Us - Space 254</title>
+<link href="img/favicon.ico" rel="icon">
+<!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+
+
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <title>About Us - Space 254</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #8CC63F; /* Theme color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #ffffff; /* White text */
+            text-decoration: none;
+        }
+
+        .navbar-brand h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text */
+            padding: 15px 20px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #007bff; /* Darker shade for hover effect */
+            color: #ffffff;
+        }
+
+        .navbar-nav .active {
+            background-color: #007bf; /* Active link color */
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h4 {
+            color: #8CC63F; /* Theme color */
+            text-transform: uppercase; /* Uppercase text */
+        }
+
+        h2 {
+            font-size: 28px; /* Larger font size */
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 22px; /* Larger font size */
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .team-member {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            flex-basis: 45%; /* Adjusted for two members per row */
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f8f9fa;
+            border-top: 1px solid #ddd;
+        }
+
+        .whatsapp-button {
+            display: block;
+            width: 150px;
+            height: 40px;
+            background-color: #25D366;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 0 auto 20px; /* Center the button */
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+
+        .chat-button {
+            display: block;
+            width: 150px;
+            height: 40px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin: 20px auto; /* Center the button */
+        }
+
+        .chat-button:hover {
+            background-color: #0056b3;
+        }
+
+        .chatbot {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .chatbot-header {
+            background-color: #8CC63F;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .chatbot-body {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+        }
+
+        .chatbot-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+
+        .chatbot-input button {
+            padding: 10px 15px;
+            background-color: #8CC63F;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .chatbot-input button:hover {
+            background-color: #6da62d;
+        }
+
+        .chat-message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .chat-message.user {
+            background-color: #e8f5e9;
+            align-self: flex-end;
+        }
+
+        .chat-message.bot {
+            background-color: #f1f1f1;
+            align-self: flex-start;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #8CC63F;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .faq {
+            margin: 20px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .achievements {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-left: 5px solid #8CC63F;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar bg-transparent">
+        <nav class="navbar navbar-expand-lg">
+            <a href="index.html" class="navbar-brand">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="img/icon-house.png" alt="Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1>Space 254</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="listings.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="property-list.html" class="dropdown-item">Flats</a>
+                            <a href="property-type.html" class="dropdown-item">Apartments</a>
+                            <a href="property-agent.html" class="dropdown-item">Airbnb's</a>
+                            <a href="property-agent.html" class="dropdown-item">Main Houses</a>
+                            <a href="property-agent.html" class="dropdown-item">Land</a>
+                            <a href="property-agent.html" class="dropdown-item">Offices</a>
+                            <a href="property-agent.html" class="dropdown-item">WareHouses</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+</br>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">Chat on WhatsApp</a>
+<a href="#" class="chat-button" id="chatButton">Chat Online</a>
+
+    <!-- About Section Start -->
+    <div class="container my-5">
+        <h2>About Us</h2>
+        <p>Welcome to Space 254, your go-to destination for finding the perfect property. We are dedicated to providing our clients with the best possible service and an extensive selection of properties to choose from.</p>
+
+        <h4>Our History</h4>
+        <p>Founded in 2023, Space 254 started as a small real estate agency with a vision to make property buying and selling a seamless experience for everyone. Despite being a new player in the market, we are committed to establishing a solid reputation in the industry. Our team of experts is dedicated to staying updated with market trends to better serve our clients.</p>
+
+        <h4>Our Mission</h4>
+        <p>Our mission is to help you find your dream home or investment property while ensuring a smooth and enjoyable experience throughout the process. We strive to exceed our clients' expectations through integrity, transparency, and unwavering support.</p>
+
+        <h4>Our Values</h4>
+        <ul>
+            <li>Integrity: We believe in honesty and transparency in all our dealings.</li>
+            <li>Customer Satisfaction: Our clients are our top priority, and we go above and beyond to meet their needs.</li>
+            <li>Transparency: We maintain clear communication throughout the buying or selling process.</li>
+            <li>Teamwork: We work collaboratively to achieve the best outcomes for our clients.</li>
+        </ul>
+
+        <h4>Our Services</h4>
+        <p>At Space 254, we offer a range of services to cater to your real estate needs:</p>
+        <ul>
+            <li><strong>Property Listings:</strong> Browse through our extensive database of properties available for sale or rent.</li>
+            <li><strong>Property Management:</strong> We manage properties on behalf of owners ensuring they are well-maintained and profitable.</li>
+            <li><strong>Consultation Services:</strong> Get expert advice on market trends, property valuation, and investment opportunities.</li>
+            <li><strong>Legal Assistance:</strong> We provide guidance on the legal aspects of buying and selling properties.</li>
+            <li><strong>Financing Options:</strong> Assistance in finding the right financing solutions for your property purchase.</li>
+        </ul>
+
+        <h4>Meet Our Team</h4>
+        <div class="team">
+            <div class="team-member">
+                <img src="img/team1.jpg" alt="Team Member 1">
+                <h5>John Doe</h5>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team2.jpg" alt="Team Member 2">
+                <h5>Jane Smith</h5>
+                <p>Property Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team3.jpg" alt="Team Member 3">
+                <h5>Emily Johnson</h5>
+                <p>Sales Executive</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team4.jpg" alt="Team Member 4">
+                <h5>Michael Brown</h5>
+                <p>Marketing Specialist</p>
+            </div>
+        </div>
+
+        <h4>Client Testimonials</h4>
+        <p>Don't just take our word for it! Here’s what some of our clients have to say:</p>
+        <blockquote>
+            <p>"Space 254 helped me find my dream home! Their team was incredibly supportive and knowledgeable." - Sarah K.</p>
+        </blockquote>
+        <blockquote>
+            <p>"I had a fantastic experience selling my property with Space 254. They handled everything professionally." - Mark T.</p>
+        </blockquote>
+        <blockquote>
+            <p>"The staff at Space 254 made the entire process easy and stress-free. Highly recommend!" - Jessica L.</p>
+        </blockquote>
+
+        <h4>Community Involvement</h4>
+        <p>At Space 254, we believe in giving back to the community. We regularly participate in local events and sponsor initiatives that promote housing awareness and community development. Our commitment to social responsibility is a core part of our identity.</p>
+
+        <h4>Frequently Asked Questions (FAQ)</h4>
+        <div class="faq">
+            <div class="faq-item">
+                <strong>Q: How do I start the process of buying a property?</strong>
+                <p>A: Contact us to schedule a consultation. We'll guide you through the steps and help you find suitable properties.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: Do you provide financing options?</strong>
+                <p>A: Yes, we work with several financial institutions to provide you with the best financing options available.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: What should I do if I want to sell my property?</strong>
+                <p>A: Reach out to our team for a property valuation and a tailored selling strategy.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: How long does the buying process take?</strong>
+                <p>A: The timeline can vary based on several factors, including financing and inspections, but we aim to streamline the process for our clients.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: Are there any hidden fees when buying a property?</strong>
+                <p>A: We believe in transparency. We will discuss all potential costs upfront, including agent fees, closing costs, and more.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: Can I view properties virtually?</strong>
+                <p>A: Absolutely! We offer virtual tours for many of our listings to make it convenient for you to explore properties from the comfort of your home.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q: What sets Space 254 apart from other real estate agencies?</strong>
+                <p>A: Our personalized approach, commitment to client satisfaction, and extensive local market knowledge set us apart.</p>
+            </div>
+        </div>
+
+        <h4>Our Achievements</h4>
+        <div class="achievements">
+            <p>As a startup, we are proud of our early milestones:</p>
+            <ul>
+                <li>Successfully closed over 50 property transactions in our first year.</li>
+                <li>Established partnerships with local housing organizations to improve community outreach.</li>
+                <li>Participated in 10+ community events to promote housing awareness.</li>
+                <li>Recognized as a promising startup in the local business community.</li>
+            </ul>
+        </div>
+
+        <h4>Contact Us</h4>
+        <p>If you have any questions or need assistance, feel free to reach out! Our team is always here to help.</p>
+        </div>
+    <!-- About Section End -->
+
+    <!-- Chatbot Section -->
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <h5>Chat Bot</h5>
+            <button id="closeChat" class="close-button">×</button>
+        </div>
+        <div class="chatbot-body" id="chatbotBody"></div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." />
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="containe py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Nairobi Kenya</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0796014215</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@space254.co.ke</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Photo Gallery</h5>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-1.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-4.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Stay updated on the latest Property services  </p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">JamboSoft Tech</a>, All Right Reserved. 
+							
+
+							Designed By <a class="border-bottom" href="">JamboSoft Tech</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+<!-- Back to Top -->
+<div>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+
+    <script src="myjs.js"></script>
+</body>
+</html>

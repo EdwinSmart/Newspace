@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spce 254 Home</title>
+<link href="img/favicon.ico" rel="icon">
+<!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+
+
+
+
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .search-container {
+            background-color: #8CC63F;
+            padding: 15px;
+            border-bottom: 2px solid #fff;
+            text-align: center;
+        }
+
+        .search-label {
+            width: 12%;
+            display: inline-block;
+            text-align: left;
+            margin-right: 10px;
+            color: #fff;
+        }
+
+        .search-input {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-select {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        background-color: #25D366;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .house-listings-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .house-listing {
+            background-color: #fff;
+            border: 1px solid #8CC63F;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 300px; /* Fixed width for horizontal layout */
+        }
+
+        .house-listing img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .preview-button {
+            background-color: #8CC63F;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close-button {
+            background-color: #8CC63F;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .modal-title {
+            color: #8CC63F;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold; /* Bold title */
+        }
+
+        .modal-description {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .modal-info {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .modal-info i {
+            margin-right: 5px;
+        }
+
+        .additional-images {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .additional-images img {
+            width: 30%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .whatsapp-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+            background-color: #25D366;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+/* Navbar Styles */
+        .navbar {
+            background-color: #8CC63F; /* Theme color */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: #ffffff; /* White text */
+            text-decoration: none;
+        }
+
+        .navbar-brand h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* White text */
+            padding: 15px 20px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #007bff; /* Darker shade for hover effect */
+            color: #ffffff;
+        }
+
+        .navbar-nav .active {
+            background-color: #007bf; /* Active link color */
+            color: #ffffff;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="container-xxl bg-white p-0">
+ 
+
+        <!-- Navbar Start -->
+    <div class="container-fluid nav-bar bg-transparent">
+        <nav class="navbar navbar-expand-lg">
+            <a href="index.html" class="navbar-brand">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="img/icon-house.png" alt="Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1>Space 254</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="listings.html" class="nav-item nav-link">Home</a>
+                    <a href="aboutnew.html" class="nav-item nav-link active">About</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="property-list.html" class="dropdown-item">Flats</a>
+                            <a href="property-type.html" class="dropdown-item">Apartments</a>
+                            <a href="property-agent.html" class="dropdown-item">Airbnb's</a>
+                            <a href="property-agent.html" class="dropdown-item">Main Houses</a>
+                            <a href="property-agent.html" class="dropdown-item">Land</a>
+                            <a href="property-agent.html" class="dropdown-item">Offices</a>
+                            <a href="property-agent.html" class="dropdown-item">WareHouses</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+</br></br></br></br></br></br>
+ <!-- Header Start -->
+<div class="container-fluid header bg-white p-0">
+    <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+        <div class="col-md-6 p-5 mt-lg-5">
+
+
+<section id="contact" style="text-align: center; padding: 20px;">
+    <h2><b>CONTACT US</b></h2>
+<div style="margin: 20px;">
+        <a href="tel:+254796014215" style="text-decoration: none; color: inherit;">
+            <i class="fas fa-phone-alt" style="font-size: 50px; color: #007bff;"></i>
+        </a>
+        <p style="margin: 5px;">Call us on 0796014215</p>
+    </div>
+</br>
+    <div style="margin: 20px;">
+        <a href="https://wa.me/0796014215" target="_blank" style="text-decoration: none; color: inherit;">
+            <i class="fab fa-whatsapp" style="font-size: 50px; color: #25D366;"></i>
+        </a>
+        <p style="margin: 5px;">Chat with us on WhatsApp</p>
+    </div>
+    
+</section>            <h1 class="display-5 animated fadeIn mb-4">Find Your Dream Home or Commercial Space Anywhere In Kenya</h1>
+            <p class="animated fadeIn mb-4 pb-2">Welcome to Space 254, your gateway to exceptional house rentals in the heart of  Kenya. Explore our curated selection of homes perfect for your family.</p>
+           
+        </div>
+        <div class="col-md-6 animated fadeIn">
+            <div class="owl-carousel header-carousel">
+                <div class="owl-carousel-item">
+                    <img class="img-fluid" src="affordablehousing1.jpg" alt="">
+                </div>
+                <div class="owl-carousel-item">
+                    <img class="img-fluid" src="icon3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Search Start -->
+<div class="search-container">
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-md-2">
+                <label for="searchKeyword" class="search-label">Search Keyword</label>
+                <input type="text" id="searchKeyword" class="search-input" placeholder="Search Keyword">
+            </div>
+            <div class="col-md-2">
+                <label for="propertyType" class="search-label">Property Type</label>
+                <select id="propertyType" class="search-select">
+                    <option value="" selected>Property Type</option>
+                    <option value="Apartments">Apartments</option>
+                    <option value="Flats">Flats</option>
+                    <option value="Villas">Villas</option>
+                    <option value="Main Houses">Main Houses</option>
+                    <option value="Airbnbs">Airbnbs</option>
+                    <option value="Warehouses">Warehouses</option>
+                    <option value="Offices">Offices</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="location" class="search-label">Property Location</label>
+                <select id="location" class="search-select">
+                    <option value="" selected>Location</option>
+                    <option value="Nairobi">Nairobi</option>
+                    <option value="Mombasa">Mombasa</option>
+                    <option value="Kisumu">Kisumu</option>
+                    <option value="Nakuru">Nakuru</option>
+                    <option value="Eldoret">Eldoret</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="price" class="search-label">Price (Kshs)</label>
+                <select id="price" class="search-select">
+                    <option value="" selected>Price</option>
+                    <option value="5000-10000">Ksh 5,000 - Ksh 10,000</option>
+                    <option value="15000-20000">Ksh 15,000 - Ksh 20,000</option>
+                    <option value="25000-30000">Ksh 25,000 - Ksh 30,000</option>
+                    <option value="35000-40000">Ksh 35,000 - Ksh 40,000</option>
+                    <option value="45000-50000">Ksh 45,000 - Ksh 50,000</option>
+                    <option value="75000+">Ksh 75,000+</option>
+                </select>
+<label for="price" class="search-label">&nbsp;</label>
+                <button onclick="searchListings()" class="search-button">Search</button>
+               
+            </div>
+            <div class="col-md-4">
+                <a class="whatsapp-button" href="https://wa.me/796014215" target="_blank">Contact via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search End -->
+
+<!-- House Listings Start -->
+<div class="container">
+    <div id="houseListings" class="house-listings-container">
+        <!-- House listings will be displayed here dynamically -->
+    </div>
+</div>
+<!-- House Listings End -->
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <div id="modalContent"></div>
+    </div>
+</div>
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Nairobi Kenya</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>0796014215</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@space254.co.ke</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Photo Gallery</h5>
+                        <div class="row g-2 pt-2">
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-1.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-2.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-3.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-4.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-5.jpg" alt="">
+                            </div>
+                            <div class="col-4">
+                                <img class="img-fluid rounded bg-light p-1" src="img/property-6.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Stay updated on the latest Property services  </p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">JamboSoft Tech</a>, All Right Reserved. 
+							
+
+							Designed By <a class="border-bottom" href="">JamboSoft Tech</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+<script>
+    // Sample house listings data
+    const houseListings = [
+        {
+            images: ['klmairbnb2.png', 'image2.jpg', 'image3.jpg'],
+            description: 'Beautiful villa with a garden in Kilimani.',
+            bedrooms: 3,
+            bathrooms: 2,
+            parkingAvailability: true,
+            location: 'Nairobi',
+            propertyType: 'Villas',
+            price: 85000,
+            contact: 'Contact: info@spacemanagers.com'
+        },
+        {
+            images: ['studioklm.jpg', 'image3.jpg', 'image4.jpg'],
+            description: 'Modern apartment in the city center.',
+            bedrooms: 2,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Mombasa',
+            propertyType: 'Apartments',
+            price: 20000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['kile3bdrm1.jpg', 'image4.jpg', 'image5.jpg'],
+            description: 'Spacious flat with lake view.',
+            bedrooms: 2,
+            bathrooms: 2,
+            parkingAvailability: false,
+            location: 'Kisumu',
+            propertyType: 'Flats',
+            price: 25000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['trmairbnb1.jpg', 'image5.jpg', 'image6.jpg'],
+            description: 'Lovely One bedroom Airbnb Thika Road, TRM Drive Nairobi.',
+            bedrooms: 4,
+            bathrooms: 3,
+            parkingAvailability: true,
+            location: 'Nakuru',
+            propertyType: 'Main Houses',
+            price: 5000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['airbnbsouthb1br2.jpg', 'image6.jpg', 'image7.jpg'],
+            description: 'Excquisite Airbnb in South B, Nairobi One Bedroom.',
+            bedrooms: 1,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Eldoret',
+            propertyType: 'Airbnbs',
+            price: 3300,
+            contact: 'Contact: example@example.com'
+        },
+  {
+            images: ['southb2resized.jpg', 'image2.jpg', 'image3.jpg'],
+            description: 'Beautiful Airbnb South B 3500per Night.',
+            bedrooms: 3,
+            bathrooms: 2,
+            parkingAvailability: true,
+            location: 'Nairobi',
+            propertyType: 'Villas',
+            price: 3500,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['kileairbnb.jpeg', 'image3.jpg', 'image4.jpg'],
+            description: 'Furnished apartment in Kitengela.',
+            bedrooms: 2,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Mombasa',
+            propertyType: 'Apartments',
+            price: 20000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['airbnbalice1.jpg', 'image4.jpg', 'image5.jpg'],
+            description: 'Spacious Airbnb South B Mwangeka Road.',
+            bedrooms: 2,
+            bathrooms: 2,
+            parkingAvailability: false,
+            location: 'Kisumu',
+            propertyType: 'Flats',
+            price: 3500,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['southb3.jpg', 'image5.jpg', 'image6.jpg'],
+            description: 'Luxury One bdrm AirBnb in South B.',
+            bedrooms: 1,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Nairobi',
+            propertyType: 'Main Houses',
+            price: 3500,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['kile3bdrm1.jpg', 'image4.jpg', 'image5.jpg'],
+            description: 'Spacious flat with lake view.',
+            bedrooms: 2,
+            bathrooms: 2,
+            parkingAvailability: false,
+            location: 'Kisumu',
+            propertyType: 'Flats',
+            price: 25000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['trmairbnb1.jpg', 'image5.jpg', 'image6.jpg'],
+            description: 'Lovely One bedroom Airbnb Thika Road, TRM Drive Nairobi.',
+            bedrooms: 4,
+            bathrooms: 3,
+            parkingAvailability: true,
+            location: 'Nakuru',
+            propertyType: 'Main Houses',
+            price: 5000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['airbnbsouthb1br2.jpg', 'image6.jpg', 'image7.jpg'],
+            description: 'Excquisite Airbnb in South B, Nairobi One Bedroom.',
+            bedrooms: 1,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Eldoret',
+            propertyType: 'Airbnbs',
+            price: 3300,
+            contact: 'Contact: example@example.com'
+        }
+    ];
+
+    // Function to display house listings
+    function displayListings(listings) {
+        const listingsContainer = document.getElementById('houseListings');
+        listingsContainer.innerHTML = '';
+
+        listings.forEach((listing, index) => {
+            const firstImage = listing.images[0];
+
+            const listingHTML = `
+                <div class="house-listing">
+                    <img src="${firstImage}" alt="House Image">
+                    <p class="modal-title">${listing.description}</p>
+                    <p><i class="fas fa-bed"></i> ${listing.bedrooms} Bedrooms</p>
+                    <p><i class="fas fa-bath"></i> ${listing.bathrooms} Bathrooms</p>
+                    <p><i class="fas fa-car"></i> Parking: ${listing.parkingAvailability ? 'Available' : 'Not Available'}</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: ${listing.location}</p>
+                    <p><i class="fas fa-dollar-sign"></i> Price: Ksh ${listing.price.toLocaleString()}</p>
+                    <button class="preview-button" onclick="openModal(${index})">Preview Image</button>
+                </div>
+            `;
+
+            listingsContainer.innerHTML += listingHTML;
+        });
+    }
+
+    // Function to search listings based on filters
+    function searchListings() {
+        const keyword = document.getElementById('searchKeyword').value.toLowerCase();
+        const propertyType = document.getElementById('propertyType').value;
+        const location = document.getElementById('location').value;
+        const priceRange = document.getElementById('price').value;
+
+        const filteredListings = houseListings.filter(listing => {
+            return (
+                (keyword === '' || listing.description.toLowerCase().includes(keyword)) &&
+                (propertyType === '' || listing.propertyType === propertyType) &&
+                (location === '' || listing.location === location) &&
+                (priceRange === '' || isPriceInRange(listing.price, priceRange))
+            );
+        });
+
+        displayListings(filteredListings);
+    }
+
+    // Function to check if the price is within the specified range
+    function isPriceInRange(price, priceRange) {
+        const [min, max] = priceRange.split('-').map(Number);
+        return (max ? price >= min && price <= max : price >= min);
+    }
+
+    // Function to open the modal with additional information
+    function openModal(index) {
+        const listing = houseListings[index];
+        const modalContent = `
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title">${listing.description}</h2>
+            <div>
+                <img src="${listing.images[0]}" alt="House Image">
+            </div>
+            <p class="modal-description">${listing.description}</p>
+            <div class="modal-info">
+                <i class="fas fa-map-marker-alt"></i> Location: ${listing.location}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-bed"></i> Bedrooms: ${listing.bedrooms}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-bath"></i> Bathrooms: ${listing.bathrooms}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-car"></i> Parking: ${listing.parkingAvailability ? 'Available' : 'Not Available'}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-dollar-sign"></i> Price: Ksh ${listing.price.toLocaleString()}
+            </div>
+            <div class="modal-info">${listing.contact}</div>
+            <div class="additional-images">
+                <h3>Additional Images</h3>
+                ${listing.images.map(image => `<img src="${image}" alt="House Image">`).join('')}
+            </div>
+        `;
+        document.getElementById('modalContent').innerHTML = modalContent;
+        document.getElementById('myModal').style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Initial display of all house listings
+    displayListings(houseListings);
+</script>
+<!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Space 254</title>
+    <link rel="stylesheet" href="mycss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar bg-transparent">
+        <nav class="navbar navbar-expand-lg">
+            <a href="index.html" class="navbar-brand">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="img/icon-house.png" alt="Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1>Space 254</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- About Section Start -->
+    <div class="container my-5">
+        <h2>About Us</h2>
+        <p>Welcome to Space 254, your go-to destination for finding the perfect property.</p>
+
+        <h4>Meet Our Team</h4>
+        <div class="team">
+            <div class="team-member">
+                <img src="img/team1.jpg" alt="Team Member 1">
+                <h5>John Doe</h5>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team2.jpg" alt="Team Member 2">
+                <h5>Jane Smith</h5>
+                <p>Property Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team3.jpg" alt="Team Member 3">
+                <h5>Emily Johnson</h5>
+                <p>Sales Executive</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team4.jpg" alt="Team Member 4">
+                <h5>Michael Brown</h5>
+                <p>Marketing Specialist</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team5.jpg" alt="Team Member 5">
+                <h5>Anna Taylor</h5>
+                <p>Customer Support</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team6.jpg" alt="Team Member 6">
+                <h5>David Wilson</h5>
+                <p>Financial Advisor</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team7.jpg" alt="Team Member 7">
+                <h5>Laura Garcia</h5>
+                <p>Real Estate Agent</p>
+            </div>
+            <div class="team-member">
+                <img src="img/team8.jpg" alt="Team Member 8">
+                <h5>James Miller</h5>
+                <p>Operations Manager</p>
+            </div>
+        </div>
+
+        <a href="#" class="chat-button" id="chatButton">Chat with Us</a>
+    </div>
+    <!-- About Section End -->
+
+    <!-- Chatbot Section -->
+    <div class="chatbot" id="chatbot">
+        <div class="chatbot-header">
+            <h5>Chat Bot</h5>
+            <button id="closeChat" class="close-button">×</button>
+        </div>
+        <div class="chatbot-body" id="chatbotBody"></div>
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." />
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <p class="m-0">© 2024 Space 254. All rights reserved.</p>
+    </footer>
+    <!-- Footer End -->
+
+    <script src="myjs.js"></script>
+</body>
+</html>

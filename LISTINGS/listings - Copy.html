@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Listings</title>
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .search-container {
+            background-color: #8CC63F;
+            padding: 15px;
+            border-bottom: 2px solid #fff;
+            text-align: center;
+        }
+
+        .search-label {
+            width: 12%;
+            display: inline-block;
+            text-align: left;
+            margin-right: 10px;
+            color: #fff;
+        }
+
+        .search-input,
+        .search-select {
+            width: 20%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-button {
+            width: 5%;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #25D366;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .house-listings-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .house-listing {
+            background-color: #fff;
+            border: 1px solid #8CC63F;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 300px; /* Fixed width for horizontal layout */
+        }
+
+        .house-listing img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .preview-button {
+            background-color: #8CC63F;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close-button {
+            background-color: #8CC63F;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .modal-title {
+            color: #8CC63F;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold; /* Bold title */
+        }
+
+        .modal-description {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .modal-info {
+            color: #333;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .modal-info i {
+            margin-right: 5px;
+        }
+
+        .additional-images {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .additional-images img {
+            width: 30%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        #container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .whatsapp-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+            background-color: #25D366;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Search Start -->
+<div class="search-container">
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-md-2">
+                <label for="searchKeyword" class="search-label">Search Keyword</label>
+                <input type="text" id="searchKeyword" class="search-input" placeholder="Search Keyword">
+            </div>
+            <div class="col-md-2">
+                <label for="propertyType" class="search-label">Property Type</label>
+                <select id="propertyType" class="search-select">
+                    <option value="" selected>Property Type</option>
+                    <option value="Apartments">Apartments</option>
+                    <option value="Flats">Flats</option>
+                    <option value="Villas">Villas</option>
+                    <option value="Main Houses">Main Houses</option>
+                    <option value="Airbnbs">Airbnbs</option>
+                    <option value="Warehouses">Warehouses</option>
+                    <option value="Offices">Offices</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="location" class="search-label">Location</label>
+                <select id="location" class="search-select">
+                    <option value="" selected>Location</option>
+                    <option value="Nairobi">Nairobi</option>
+                    <option value="Mombasa">Mombasa</option>
+                    <option value="Kisumu">Kisumu</option>
+                    <option value="Nakuru">Nakuru</option>
+                    <option value="Eldoret">Eldoret</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="price" class="search-label">Price (Kshs)</label>
+                <select id="price" class="search-select">
+                    <option value="" selected>Price</option>
+                    <option value="5000-10000">Ksh 5,000 - Ksh 10,000</option>
+                    <option value="15000-20000">Ksh 15,000 - Ksh 20,000</option>
+                    <option value="25000-30000">Ksh 25,000 - Ksh 30,000</option>
+                    <option value="35000-40000">Ksh 35,000 - Ksh 40,000</option>
+                    <option value="45000-50000">Ksh 45,000 - Ksh 50,000</option>
+                    <option value="75000+">Ksh 75,000+</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="price" class="search-label">&nbsp;</label>
+                <button onclick="searchListings()" class="search-button">Search</button>
+                <a class="whatsapp-button" href="https://wa.me/796014215" target="_blank">Contact via WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Search End -->
+
+<!-- House Listings Start -->
+<div class="container">
+    <div id="houseListings" class="house-listings-container">
+        <!-- House listings will be displayed here dynamically -->
+    </div>
+</div>
+<!-- House Listings End -->
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<script>
+    // Sample house listings data
+    const houseListings = [
+        {
+            images: ['klmairbnb2.png', 'image2.jpg', 'image3.jpg'],
+            description: 'Beautiful villa with a garden.',
+            bedrooms: 3,
+            bathrooms: 2,
+            parkingAvailability: true,
+            location: 'Nairobi',
+            propertyType: 'Villas',
+            price: 15000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['image2.jpg', 'image3.jpg', 'image4.jpg'],
+            description: 'Modern apartment in the city center.',
+            bedrooms: 2,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Mombasa',
+            propertyType: 'Apartments',
+            price: 20000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['image3.jpg', 'image4.jpg', 'image5.jpg'],
+            description: 'Spacious flat with sea view.',
+            bedrooms: 2,
+            bathrooms: 2,
+            parkingAvailability: false,
+            location: 'Kisumu',
+            propertyType: 'Flats',
+            price: 25000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['image4.jpg', 'image5.jpg', 'image6.jpg'],
+            description: 'Luxury main house with pool.',
+            bedrooms: 4,
+            bathrooms: 3,
+            parkingAvailability: true,
+            location: 'Nakuru',
+            propertyType: 'Main Houses',
+            price: 50000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['image5.jpg', 'image6.jpg', 'image7.jpg'],
+            description: 'Cozy Airbnb near the beach.',
+            bedrooms: 1,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Eldoret',
+            propertyType: 'Airbnbs',
+            price: 10000,
+            contact: 'Contact: example@example.com'
+        },
+  {
+            images: ['image1.jpg', 'image2.jpg', 'image3.jpg'],
+            description: 'Beautiful villa with a garden.',
+            bedrooms: 3,
+            bathrooms: 2,
+            parkingAvailability: true,
+            location: 'Nairobi',
+            propertyType: 'Villas',
+            price: 15000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['kileairbnb.jpeg', 'image3.jpg', 'image4.jpg'],
+            description: 'Modern apartment in the city center.',
+            bedrooms: 2,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Mombasa',
+            propertyType: 'Apartments',
+            price: 20000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['image3.jpg', 'image4.jpg', 'image5.jpg'],
+            description: 'Spacious flat with sea view.',
+            bedrooms: 2,
+            bathrooms: 2,
+            parkingAvailability: false,
+            location: 'Kisumu',
+            propertyType: 'Flats',
+            price: 25000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['image4.jpg', 'image5.jpg', 'image6.jpg'],
+            description: 'Luxury main house with pool.',
+            bedrooms: 4,
+            bathrooms: 3,
+            parkingAvailability: true,
+            location: 'Nakuru',
+            propertyType: 'Main Houses',
+            price: 50000,
+            contact: 'Contact: example@example.com'
+        },
+        {
+            images: ['image5.jpg', 'image6.jpg', 'image7.jpg'],
+            description: 'Cozy Airbnb near the beach.',
+            bedrooms: 1,
+            bathrooms: 1,
+            parkingAvailability: true,
+            location: 'Eldoret',
+            propertyType: 'Airbnbs',
+            price: 10000,
+            contact: 'Contact: example@example.com'
+        }
+	
+    ];
+
+    // Function to display house listings
+    function displayListings(listings) {
+        const listingsContainer = document.getElementById('houseListings');
+        listingsContainer.innerHTML = '';
+
+        listings.forEach((listing, index) => {
+            const firstImage = listing.images[0];
+
+            const listingHTML = `
+                <div class="house-listing">
+                    <img src="${firstImage}" alt="House Image">
+                    <p class="modal-title">${listing.description}</p>
+                    <p><i class="fas fa-bed"></i> ${listing.bedrooms} Bedrooms</p>
+                    <p><i class="fas fa-bath"></i> ${listing.bathrooms} Bathrooms</p>
+                    <p><i class="fas fa-car"></i> Parking: ${listing.parkingAvailability ? 'Available' : 'Not Available'}</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Location: ${listing.location}</p>
+                    <p><i class="fas fa-dollar-sign"></i> Price: Ksh ${listing.price.toLocaleString()}</p>
+                    <button class="preview-button" onclick="openModal(${index})">Preview Image</button>
+                </div>
+            `;
+
+            listingsContainer.innerHTML += listingHTML;
+        });
+    }
+
+    // Function to search listings based on filters
+    function searchListings() {
+        const keyword = document.getElementById('searchKeyword').value.toLowerCase();
+        const propertyType = document.getElementById('propertyType').value;
+        const location = document.getElementById('location').value;
+        const priceRange = document.getElementById('price').value;
+
+        const filteredListings = houseListings.filter(listing => {
+            return (
+                (keyword === '' || listing.description.toLowerCase().includes(keyword)) &&
+                (propertyType === '' || listing.propertyType === propertyType) &&
+                (location === '' || listing.location === location) &&
+                (priceRange === '' || isPriceInRange(listing.price, priceRange))
+            );
+        });
+
+        displayListings(filteredListings);
+    }
+
+    // Function to check if the price is within the specified range
+    function isPriceInRange(price, priceRange) {
+        const [min, max] = priceRange.split('-').map(Number);
+        return (max ? price >= min && price <= max : price >= min);
+    }
+
+    // Function to open the modal with additional information
+    function openModal(index) {
+        const listing = houseListings[index];
+        const modalContent = `
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title">${listing.description}</h2>
+            <div>
+                <img src="${listing.images[0]}" alt="House Image">
+            </div>
+            <p class="modal-description">${listing.description}</p>
+            <div class="modal-info">
+                <i class="fas fa-map-marker-alt"></i> Location: ${listing.location}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-bed"></i> Bedrooms: ${listing.bedrooms}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-bath"></i> Bathrooms: ${listing.bathrooms}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-car"></i> Parking: ${listing.parkingAvailability ? 'Available' : 'Not Available'}
+            </div>
+            <div class="modal-info">
+                <i class="fas fa-dollar-sign"></i> Price: Ksh ${listing.price.toLocaleString()}
+            </div>
+            <div class="modal-info">${listing.contact}</div>
+            <div class="additional-images">
+                <h3>Additional Images</h3>
+                ${listing.images.map(image => `<img src="${image}" alt="House Image">`).join('')}
+            </div>
+        `;
+        document.getElementById('modalContent').innerHTML = modalContent;
+        document.getElementById('myModal').style.display = 'flex';
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Initial display of all house listings
+    displayListings(houseListings);
+</script>
+
+</body>
+</html>
